@@ -1,4 +1,4 @@
-COPY university_students(student_id, first_name, last_name, attendance, gpa, major_department)
+COPY university_students(student_id, first_name, last_name, gpa, department_id)
 FROM '/path/to/university_students.csv'
 WITH (FORMAT csv, HEADER true);
 
