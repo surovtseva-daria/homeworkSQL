@@ -1,13 +1,15 @@
- CREATE TABLE university_students (
-    student_id SERIAL PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    gpa NUMERIC,
-    major_department VARCHAR(50),
-    attendance NUMERIC
-);
-
-\copy university_students (first_name, last_name, gpa, major_department, attendance) FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_students.csv' WITH (FORMAT csv, HEADER true);
+COPY university_students(student_id, first_name, last_name, attendance, gpa, major_department)
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_students.csv'
+WITH (FORMAT csv, HEADER true);
+COPY instructors(instructor_id, first_name, last_name, salary)
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/instructors.csv'
+WITH (FORMAT csv, HEADER true);
+COPY enrollments(student_id, course_id, is_passed, grade)
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/enrollments.csv'
+WITH (FORMAT csv, HEADER true);
+COPY v_student_course_enrollments(student_id, course_id, grade)
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/v_student_course_enrollments.csv'
+WITH (FORMAT csv, HEADER true);
 
 -- ЗАДАНИЕ 1: 
 WITH avg_attendance AS (
