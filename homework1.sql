@@ -1,7 +1,6 @@
-COPY students(student_id, first_name, last_name, gpa, department_id)
+COPY university_students(student_id, first_name, last_name, attendance, gpa, major_department)
 FROM '/path/to/university_students.csv'
-DELIMITER ','
-CSV HEADER;
+WITH (FORMAT csv, HEADER true);
 
 -- ЗАДАНИЕ 1:
 SELECT s.student_id, s.first_name, s.last_name
