@@ -2,13 +2,13 @@ COPY university_students(student_id, first_name, last_name, attendance, gpa, maj
 FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_students.csv'
 WITH (FORMAT csv, HEADER true);
 COPY instructors(instructor_id, first_name, last_name, salary)
-FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/instructors.csv'
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_instructors.csv'
 WITH (FORMAT csv, HEADER true);
 COPY enrollments(student_id, course_id, is_passed, grade)
-FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/enrollments.csv'
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_enrollments.csv'
 WITH (FORMAT csv, HEADER true);
 COPY v_student_course_enrollments(student_id, course_id, grade)
-FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/v_student_course_enrollments.csv'
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_courses.csv'
 WITH (FORMAT csv, HEADER true);
 
 -- ЗАДАНИЕ 1: 
