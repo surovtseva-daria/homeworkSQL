@@ -1,5 +1,5 @@
 COPY university_students(student_id, first_name, last_name, gpa, department_id)
-FROM '/path/to/university_students.csv'
+FROM 'https://raw.githubusercontent.com/surovtseva-daria/homeworkSQL/main/university_students.csv'
 WITH (FORMAT csv, HEADER true);
 
 -- ЗАДАНИЕ 1:
